@@ -8,7 +8,12 @@
 </head>
 <body>
    <h1 class="heading">qr:Code:Bit</h1> 
+   <br><br>
    <div class="dropcontainer">
+    <h4>Create QR:Code</h1>
+    <br>
+    <textarea id="messagebox" cols="20" rows="1" maxlength="3" minlength="1"></textarea>
+    <br>
     <form>
     <select name="11" id="11">
         <option value="0">0</option>
@@ -120,15 +125,156 @@
 
     <br>
     <br>
-    <br>
-    <br>
-        <input type="submit" value="Create">
+        <button onclick="createQRCode();">Create</button>
     </form>
     
+    </div>
+
+   <div class="decryptdropcontainer">
+    <h4>Decrypt QR:Code</h1>
+    <br>
+    <form>
+    <select name="11" id="11">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="12" id="12">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="13" id="13">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="14" id="14">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="15" id="15">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="21" id="21">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="22" id="22">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="23" id="23">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="24" id="24">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="25" id="25">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="31" id="31">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="32" id="32">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="33" id="33">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="34" id="34">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="35" id="35">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="41" id="41">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="42" id="42">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="43" id="43">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="44" id="44">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="45" id="45">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="51" id="51">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="52" id="52">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="53" id="53">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="54" id="54">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="55" id="55">
+        <option value="1">1</option>
+    </select>
+
+    <br>
+    <br>
+        <input type="submit" value="Decrypt">
+
+    <br>
+        <p id="decryptedmessage">d</p>
+    </form>
+    
+    </div>
+
     <script>
+        function convertToBinaryApproach2(input) {
+        let binaryResult = '';
 
+        for (const char of input) {
+            const codePoint = char.codePointAt(0);
+            const binaryValue = codePoint.toString(2);
+            binaryResult += 
+                binaryValue.padStart(8, '0')/* + ' '*/;
+        }
 
-    </script>
+        return binaryResult.trim();
+    }
+
+        function createQRCode() {
+            const inputString = $("#messagebox").val();            
+            const binaryRepresentation = convertToBinaryApproach2(inputString);
+            
+            
+            alert(binaryRepresentation);
+
+        }
+            </script>
 
     <style>
         .flex-container {
@@ -138,6 +284,6 @@
         
     </style>
 
-   </div>
+   
 </body>
 </html>
