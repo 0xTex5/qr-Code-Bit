@@ -125,9 +125,11 @@
 
     <br>
     <br>
-        <button onclick="createQRCode();">Create</button>
+        
     </form>
     
+    <button onclick="createQRCode();">Create</button>
+
     </div>
 
    <div class="decryptdropcontainer">
@@ -244,7 +246,7 @@
 
     <br>
     <br>
-        <input type="submit" value="Decrypt">
+        <input type="submit" value="Decrypt" onclick="decryptQRCode();">
 
     <br>
         <p id="decryptedmessage">d</p>
@@ -253,27 +255,51 @@
     </div>
 
     <script>
-        function convertToBinaryApproach2(input) {
-        let binaryResult = '';
 
-        for (const char of input) {
-            const codePoint = char.codePointAt(0);
-            const binaryValue = codePoint.toString(2);
-            binaryResult += 
-                binaryValue.padStart(8, '0')/* + ' '*/;
-        }
+        const dropdowns = ["11", "12", "13", "14", "15", "21", "22", "23", "24", "25", "31", "32", "33", "34", "35", "41", "42", "43", "44", "45", "51", "52", "53", "54"];
+
+
+
+        function convertToBinaryApproach2(input) {
+            let binaryResult = '';
+
+            for (const char of input) {
+                const codePoint = char.codePointAt(0);
+                const binaryValue = codePoint.toString(2);
+                binaryResult += 
+                    binaryValue.padStart(8, '0')/* + ' '*/;
+            }
 
         return binaryResult.trim();
     }
 
         function createQRCode() {
-            const inputString = $("#messagebox").val();            
-            const binaryRepresentation = convertToBinaryApproach2(inputString);
+            let inputString = $("#messagebox").val();            
+            let binaryRepresentation = convertToBinaryApproach2(inputString);
+
+            const firstHTML = '<option value="';
+            const secondHTML = '">';
+            const thirdHTML = "</option>";
             
-            
-            alert(binaryRepresentation);
+            let i = 0;
+
+            dropdowns.forEach((item) => {
+                document.getElementById(item).innerHTML = firstHTML + binaryRepresentation.charAt(i) + secondHTML + binaryRepresentation.charAt(i) + thirdHTML;
+
+                i = i + 1;
+            });
+
+            //alert(binaryRepresentation);
 
         }
+
+
+        function decryptQRCode() {
+
+
+            
+        }
+
             </script>
 
     <style>
