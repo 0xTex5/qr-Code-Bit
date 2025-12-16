@@ -246,7 +246,7 @@
 
     <br>
     <br>
-        <input type="submit" value="Decrypt" onclick="decryptQRCode();">
+        <input type="button" value="Decrypt" onclick="decryptQRCode();">
 
     <br>
         <p id="decryptedmessage">d</p>
@@ -296,7 +296,11 @@
 
         function decryptQRCode() {
 
-
+            let params = new URLSearchParams(document.location.search);
+            let name = params.get("11"); 
+            alert(name);
+            
+//TODO::ADD STUFF FOR DECRYPT
             
         }
 
