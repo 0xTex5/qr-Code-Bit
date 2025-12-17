@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--
+    QRCODEBIT
+
+    Here's the code comments because its not really efficient to put code comments all over cuz its so big
+    first is a dropdown list for encrypt and decrypt inside a form
+
+    when submitted starts encrypting and decrypting qr codes by using an ascii to binary and binary to ascii
+
+    from there it either displays the qr code or the decrypted message
+
+    
+    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -135,128 +148,130 @@
    <div class="decryptdropcontainer">
     <h4>Decrypt QR:Code</h1>
     <br>
-    <form>
-    <select name="11" id="11">
+   <form onsubmit="decryptQRCode();">
+    <select name="d11" id="d11">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="12" id="12">
+    <select name="d12" id="d12">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="13" id="13">
+    <select name="d13" id="d13">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="14" id="14">
+    <select name="d14" id="d14">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="15" id="15">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <br>
-
-    <select name="21" id="21">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="22" id="22">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="23" id="23">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="24" id="24">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="25" id="25">
+    <select name="d15" id="d15">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
     <br>
 
-    <select name="31" id="31">
+    <select name="d21" id="d21">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="32" id="32">
+    <select name="d22" id="d22">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="33" id="33">
+    <select name="d23" id="d23">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="34" id="34">
+    <select name="d24" id="d24">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="35" id="35">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <br>
-
-    <select name="41" id="41">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="42" id="42">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="43" id="43">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="44" id="44">
-        <option value="0">0</option>
-        <option value="1">1</option>
-    </select>
-    <select name="45" id="45">
+    <select name="d25" id="d25">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
     <br>
 
-    <select name="51" id="51">
+    <select name="d31" id="d31">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="52" id="52">
+    <select name="d32" id="d32">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="53" id="53">
+    <select name="d33" id="d33">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="54" id="54">
+    <select name="d34" id="d34">
         <option value="0">0</option>
         <option value="1">1</option>
     </select>
-    <select name="55" id="55">
+    <select name="d35" id="d35">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="d41" id="d41">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d42" id="d42">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d43" id="d43">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d44" id="d44">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d45" id="d45">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <br>
+
+    <select name="d51" id="d51">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d52" id="d52">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d53" id="d53">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d54" id="d54">
+        <option value="0">0</option>
+        <option value="1">1</option>
+    </select>
+    <select name="d55" id="d55">
         <option value="1">1</option>
     </select>
 
-    <br>
-    <br>
-        <input type="button" value="Decrypt" onclick="decryptQRCode();">
+    <br><br>
+    <input type="submit" value="Decrypt">
 
     <br>
-        <p id="decryptedmessage">d</p>
-    </form>
+    <p id="decryptedmessage">d</p>
+</form>
+ 
     
     </div>
 
     <script>
 
         const dropdowns = ["11", "12", "13", "14", "15", "21", "22", "23", "24", "25", "31", "32", "33", "34", "35", "41", "42", "43", "44", "45", "51", "52", "53", "54"];
+
+        const decryptdropdowns = ["d11", "d12", "d13", "d14", "d15", "d21", "d22", "d23", "d24", "d25", "d31", "d32", "d33", "d34", "d35", "d41", "d42", "d43", "d44", "d45", "d51", "d52", "d53", "d54"];
 
 
 
@@ -271,7 +286,17 @@
             }
 
         return binaryResult.trim();
-    }
+        }
+
+        function binaryAgent(str) {
+            //var newBin = str.split(" ");
+            var binCode = [];
+
+            for (i = 0; i < newBin.length; i++) {
+                binCode.push(String.fromCharCode(parseInt(newBin[i], 2)));
+            }
+            return binCode.join("");
+        }
 
         function createQRCode() {
             let inputString = $("#messagebox").val();            
@@ -296,12 +321,25 @@
 
         function decryptQRCode() {
 
+            let tmpBinaryArray = ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"];
             let params = new URLSearchParams(document.location.search);
-            let name = params.get("11"); 
-            alert(name);
             
-//TODO::ADD STUFF FOR DECRYPT
-            
+            let i = 0;
+
+            tmpBinaryArray.forEach((item) => {
+                let getChar = params.get(decryptdropdowns[i]);
+                item = getChar;
+
+
+                i = i + 1;
+            });
+
+            let finishedString = tmpBinaryArray.join();
+
+            document.getElementById('decryptedmessage').innerHTML = finishedString;
+
+
+
         }
 
             </script>
